@@ -74,7 +74,7 @@ CHAT BOX
 NAVBAR
 //////////////////////// */
 #navbar{
-
+  position: fixed;
   width: 100%;
   background-color: darkslategrey;
   height: 3rem;
@@ -90,10 +90,12 @@ NAVBAR
 CARDS
 ////////////////////// */
 #scorescontainer{
+    padding-top: 70px;
     font-size: 1.5rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 #quarter{
     padding: 10px;
@@ -117,11 +119,6 @@ CARDS
     float: right;
     padding-right: 20px;
 }
-
-
-
-
-  
   .card {
     background: #fff;
     border-radius: 2px;
@@ -139,5 +136,19 @@ CARDS
   .card-1:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   }
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  #chatbox{
+    width: 100%;
+    height: 50%;
+  }
+  #messages{
+    height: 95%;
+    margin-right: 10px;
+  }
+}
+
+
 
   
