@@ -36,21 +36,21 @@
             <span id= "scoretitle">SIMPLE SCORES</span>
         </div>
         <div id="scorescontainer">
-            <div class="card card-1">
+            <div class="card card-1" v-for = "(game, index) in scores.data">
                 <br>
                 <div id = "quarter">
-                    Q1
+                    Q{{game.period}}
                 </div>
                 <div id= "timeleft">
-                    1:21
+                    {{game.time}}
                 </div>
                 <div id="team1">
-                    Utah Jazz
-                    <span class="score">99</span>
+                    {{game.home_team.name}} 
+                    <span class="score">{{game.home_team_score}}</span>
                 </div>
                 <div id="team2">
-                    Houston Rockets
-                    <span class="score">100</span>
+                    {{game.visitor_team.name}}
+                    <span class="score">{{game.visitor_team_score}}</span>
                 </div>
 
             </div>

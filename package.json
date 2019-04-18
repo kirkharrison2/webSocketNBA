@@ -8,7 +8,11 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "moment": "^2.24.0",
-    "node-fetch": "^2.3.0"
+    "node-fetch": "^2.3.0",
+    "ws": "^6.2.1"
+  },
+  "engines": {
+    "node": "11.6.0"
   },
   "devDependencies": {},
   "scripts": {
