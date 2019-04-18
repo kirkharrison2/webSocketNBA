@@ -45,7 +45,7 @@ var app = new Vue({
       },
       connectSocket: function () {
         // connect via WebSocket
-        this.socket = new WebSocket('ws://simple-scores-nba.herokuapp.com/');
+        this.socket = new WebSocket('wss://simple-scores-nba.herokuapp.com/');
         
         // this.socket.onopen = () => {
         //   // refresh scores on open page
