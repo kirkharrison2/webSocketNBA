@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href = "style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        
+        <div id="chatbox" v-show = "chatOpen">
+            
+            <div id="chattop" v-on:click="chatOpen=false">
+                <div id="minimize">
+                    -
+                </div>
+            </div>
+
+            <div id="messages">
+                <div id="messageList" v-for = "(message, index) in messages">
+                    {{message}}
+                </div>
+            </div>
+            <div id="chattextcontainer">
+                <input id="inputchat" v-model="newmessage" v-on:keyup.enter="addMessage()" type="text">
+            </div>
+
+        </div>
+        <div id="fab" v-on:click="chatOpen=true" v-show = "!chatOpen">
+
+            </div>
+        <div id="navbar">
+            <span id= "scoretitle">SIMPLE SCORES</span>
+        </div>
+        <div id="scorescontainer">
+            <div class="card card-1">
+                <br>
+                <div id = "quarter">
+                    Q1
+                </div>
+                <div id= "timeleft">
+                    1:21
+                </div>
+                <div id="team1">
+                    Utah Jazz
+                    <span class="score">99</span>
+                </div>
+                <div id="team2">
+                    Houston Rockets
+                    <span class="score">100</span>
+                </div>
+
+            </div>
+        </div>
+        
+        
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="app.js"></script>
+</html>

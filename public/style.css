@@ -1,0 +1,143 @@
+body {
+    background: #e2e1e0;
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+  }
+#fab{
+  width: 60px;
+  height: 60px;
+  background-color: darkorange;
+  background-image: url('chatbubble.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed;
+  right: 60px;
+  bottom: 60px;
+  border-radius: 30px; 
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+}
+#fab:hover{
+  background-color: orangered;
+}
+
+/* ///////////////////////
+CHAT BOX
+/////////////////////// */
+#chatbox{
+  width: 400px;
+  height: 400px;
+  
+  background-color:darkslategray;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+#chattop{
+  width: 100%;
+  height: 25px;
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: darkorange;
+  color: white;
+  font-size: 25px;
+}
+#chattop:hover{
+  background-color: orangered;
+}
+#minimize{
+  display: block;
+  margin-right: 15px;
+}
+#chattextcontainer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+#inputchat{
+  width: 100%;
+  height: 25px;
+  font-size: 24px;
+}
+#messages{
+  color: white;
+  height: 345px;
+  overflow-y: scroll;
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+/* ////////////////////////
+NAVBAR
+//////////////////////// */
+#navbar{
+
+  width: 100%;
+  background-color: darkslategrey;
+  height: 3rem;
+}
+#scoretitle{
+  font-size: 1.5rem;
+  display: inline-block;
+  margin-top: 11px;
+  margin-left: 10px;
+  color: darkorange;
+}
+/* //////////////////////
+CARDS
+////////////////////// */
+#scorescontainer{
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#quarter{
+    padding: 10px;
+    text-align: center;
+}
+#timeleft{
+    text-align: center;
+}
+#team1{
+    padding-top: 30px;
+    padding-left: 15px;
+    font-size: 1.5rem;
+}
+#team2{
+    padding-top: 30px;
+    padding-left: 15px;
+    font-size: 1.5rem;
+
+}
+.score{
+    float: right;
+    padding-right: 20px;
+}
+
+
+
+
+  
+  .card {
+    background: #fff;
+    border-radius: 2px;
+    display: inline-block;
+    height: 300px;
+    margin: 1rem;
+    width: 300px;
+  }
+  
+  .card-1 {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  }
+  
+  .card-1:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+
+  
