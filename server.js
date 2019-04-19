@@ -1,4 +1,4 @@
-var moment = require('moment');
+var moment = require('moment-timezone');
 const fetch = require('node-fetch');
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -15,7 +15,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 
 
-let date = moment().format("YYYY-MM-DD");
+let date = moment.tz("America/Los_Angeles").format("YYYY-MM-DD");
+//var losAngeles = moment.tz("America/Los_Angeles")
 console.log("DATE", date);
 
 
