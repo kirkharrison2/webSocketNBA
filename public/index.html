@@ -9,8 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="app">
-        
+    <div id="app">        
         <div id="chatbox" v-show = "chatOpen">
             
             <div id="chattop" v-on:click="chatOpen=false">
@@ -18,7 +17,6 @@
                     -
                 </div>
             </div>
-
             <div id="messages">
                 <div id="messageList" v-for = "(message, index) in messages">
                     {{message}}
@@ -29,9 +27,7 @@
             </div>
 
         </div>
-        <div id="fab" v-on:click="chatOpen=true" v-show = "!chatOpen">
-
-            </div>
+        <div id="fab" v-on:click="chatOpen=true" v-show = "!chatOpen"></div>
         <div id="navbar">
             <span id= "scoretitle">SIMPLE SCORES</span>
         </div>
@@ -54,13 +50,9 @@
                 </div>
 
             </div>
-        </div>
-        
-        
+        </div>    
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-
-<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
 <script src="app.js"></script>
 </html>

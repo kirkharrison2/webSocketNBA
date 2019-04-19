@@ -2,7 +2,7 @@ body {
     background: #e2e1e0;
     font-family: 'Roboto', sans-serif;
     margin: 0px;
-  }
+}
 #fab{
   width: 60px;
   height: 60px;
@@ -15,7 +15,6 @@ body {
   bottom: 60px;
   border-radius: 30px; 
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-
 }
 #fab:hover{
   background-color: orangered;
@@ -27,14 +26,12 @@ CHAT BOX
 #chatbox{
   width: 400px;
   height: 400px;
-  
   background-color:darkslategray;
   position: fixed;
   bottom: 0;
   right: 0;
   margin-right: auto;
   margin-left: auto;
-
 }
 #chattop{
   width: 100%;

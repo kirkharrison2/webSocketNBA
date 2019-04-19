@@ -2,7 +2,6 @@ var moment = require('moment-timezone');
 const fetch = require('node-fetch');
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors');
 const WebSocket = require('ws');
 
 var app = express();
@@ -11,12 +10,8 @@ app.set('port', (process.env.PORT || 8080));
 app.use(express.static('public'));
 // .use injects middleware into express app
 app.use(bodyParser.urlencoded({extended: false}));
-//app.use(cors({credentials: true, origin: 'https://vue-budget-app.herokuapp.com'}));
-
-
 
 let date = moment.tz("America/Los_Angeles").format("YYYY-MM-DD");
-//var losAngeles = moment.tz("America/Los_Angeles")
 console.log("DATE", date);
 
 
@@ -33,17 +28,16 @@ function getScores(){
     fetch(fetchURL).then(response =>{
         response.json().then(data => {
             scoreData = data;
-           // console.log(scoreData);
-            // scoreData.data.forEach(game =>{
-            //     //console.log("GAME", game.home_team, game.visitor_team);
-            // })
             sendAllScoresToAllSockets();
         });
     });
 }
+// Gets scores on server startup
 getScores();
-// Gets scores every 60 seconds
 
+
+
+// Gets scores every 60 seconds
 setInterval(function() {  
     let grabScores = getScores();
     console.log('updated');
@@ -84,10 +78,6 @@ var sendAllScoresToAllSockets = function () {
     console.log("Updated Scores")
 };
 
-// wss.onopen = () => {
-//     ws.send(JSON.stringify(scoreData));
-//   }
-
 wss.on('connection', function connection(ws) {
   ws.on('message', function incoming(data) {
     data = JSON.parse(data);
@@ -103,21 +93,18 @@ wss.on('connection', function connection(ws) {
       }
     // REQUEST TO GET MESSAGES
     else if (data.action == "list" && data.resource == "messages") {
-        //console.log('check here')
         let data = {
             resource: 'messages',
             action: 'list',
             data: messageList
         };
         ws.send(JSON.stringify(data));
-        console.log('asdas')
     } 
     // ADDS A MESSAGE
     else if (data.action == "add" && data.resource == "messages"){
         console.log('New message received', data);
         messageList.push(data.data);
         sendAllMessagesToAllSockets();
-
     }
   });
 });

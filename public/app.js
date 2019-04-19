@@ -6,7 +6,6 @@ var app = new Vue({
       chatOpen: false,
       newmessage: "",
       socket: null,
-      message: 'Hello Vue!',
       scores: {},
       messages: []
     },
@@ -50,14 +49,13 @@ var app = new Vue({
         this.socket.onmessage = event => {
           var received = event.data;
           var data = JSON.parse(received);
-          //console.log(data)
+          
           if (data.action === 'list' && data.resource === 'scores') {
             this.scores = data.data;
             console.log('updated Scores')
           }
           if (data.action === 'list' && data.resource === 'messages'){
             this.messages = data.data;
-            //console.log("Messages", this.messages);
             this.messages.reverse();
           }
 
