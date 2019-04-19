@@ -141,7 +141,7 @@ CARDS
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
   #chatbox{
     width: 100%;
-    height: 50%;
+    height: 70%;
   }
   #messages{
     height: 80%;
