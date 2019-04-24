@@ -34,9 +34,19 @@
         <div id="scorescontainer">
             <div class="card card-1" v-for = "(game, index) in scores.data">
                 <br>
-                <div id = "quarter">
-                    Q{{game.period}}
+                <div id = "quarter" >
+                    <div v-show = "game.status !== 'TBD'  && game.status !== 'Final'">
+                        Q{{game.period}}
+                    </div>
+                    <div v-show = "game.status === 'TBD'">
+                            TBD
+                    </div>
+                    <div v-show = "game.status === 'Final'">
+                            Final
+                    </div>
+                    
                 </div>
+                
                 <div id= "timeleft">
                     {{game.time}}
                 </div>
