@@ -41,7 +41,7 @@ getScores();
 setInterval(function() {  
     let grabScores = getScores();
     console.log('updated');
-}, 30000);
+}, 60000);
 
 var server = app.listen(app.get('port'), function(){
     console.log("Server is listening...")
