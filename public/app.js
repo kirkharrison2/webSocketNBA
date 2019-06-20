@@ -7,7 +7,8 @@ var app = new Vue({
       newmessage: "",
       socket: null,
       scores: {},
-      messages: []
+      messages: [],
+      noGames: false
     },
     created: function(){
       console.log('Vuejs is ready')
@@ -52,7 +53,10 @@ var app = new Vue({
           
           if (data.action === 'list' && data.resource === 'scores') {
             this.scores = data.data;
-            console.log('updated Scores')
+            console.log('updated Scores');
+            if(this.scores.data.length == 0){
+              this.noGames = true;
+            }
           }
           if (data.action === 'list' && data.resource === 'messages'){
             this.messages = data.data;

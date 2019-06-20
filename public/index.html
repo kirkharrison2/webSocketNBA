@@ -29,8 +29,9 @@
         </div>
         <div id="fab" v-on:click="chatOpen=true" v-show = "!chatOpen"></div>
         <div id="navbar">
-            <span id= "scoretitle">SIMPLE SCORES</span>
+            <span id= "scoretitle">SIMPLE NBA SCORES</span>
         </div>
+
         <div id="scorescontainer">
             <div class="card card-1" v-for = "(game, index) in scores.data">
                 <br>
@@ -60,7 +61,11 @@
                 </div>
 
             </div>
-        </div>    
+        </div> 
+        <div id="noGameMessage" v-show="noGames">
+            <h1>No games today. Check back tomorrow!</h1>
+        </div>
+
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
