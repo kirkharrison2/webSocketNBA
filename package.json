@@ -9,7 +9,7 @@
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.25",
     "node-fetch": "^2.3.0",
-    "ws": "^6.2.1"
+    "ws": "^7.4.6"
   },
   "engines": {
     "node": "11.6.0"
